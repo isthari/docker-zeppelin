@@ -28,6 +28,7 @@ RUN mv /root/zeppelin-0.6.2-bin-all /opt/zeppelin
 #ADD zeppelin-0.7.0-SNAPSHOT /opt/zeppelin
 #ADD zeppelin-0.6.2-bin-all /opt/zeppelin
 ADD start.sh /opt/zeppelin
+ADD interpreter.json /opt/zeppelin/conf/interpreter.json
 RUN chmod oug+x //opt/zeppelin/start.sh
 
 EXPOSE 8080
