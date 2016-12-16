@@ -7,26 +7,24 @@ RUN cd /root; tar -xzf zeppelin-0.6.2-bin-all.tgz
 RUN rm /root/zeppelin-0.6.2-bin-all.tgz
 RUN mv /root/zeppelin-0.6.2-bin-all /opt/zeppelin
 
-#RUN R -e "install.packages('knitr', repos = 'http://cran.us.r-project.org')"
-#RUN R -e "install.packages('devtools', repos = 'http://cran.us.r-project.org')"
-#RUN R -e "install.packages('ggplot2', repos = 'http://cran.us.r-project.org')"
+RUN R -e "install.packages('knitr', repos = 'http://cran.us.r-project.org')"
+RUN R -e "install.packages('devtools', repos = 'http://cran.us.r-project.org')"
+RUN R -e "install.packages('ggplot2', repos = 'http://cran.us.r-project.org')"
 
-#RUN R -e "install.packages('mplot', repos = 'http://cran.us.r-project.org')"
-#RUN R -e "install.packages('googleVis', repos = 'http://cran.us.r-project.org')"
+RUN R -e "install.packages('mplot', repos = 'http://cran.us.r-project.org')"
+RUN R -e "install.packages('googleVis', repos = 'http://cran.us.r-project.org')"
 
 # not working
 #RUN R -e "library(devtools); install_github('ramnathv/rCharts')"
 
-#RUN R -e "install.packages('gimnet', repos = 'http://cran.us.r-project.org')"
-#RUN R -e "install.packages('pROC', repos = 'http://cran.us.r-project.org')"
-#RUN R -e "install.packages('data.table', repos = 'http://cran.us.r-project.org')"
-#RUN R -e "install.packages('caret', repos = 'http://cran.us.r-project.org')"
-#RUN R -e "install.packages('sqldf', repos = 'http://cran.us.r-project.org')"
-#RUN R -e "install.packages('wordcloud', repos = 'http://cran.us.r-project.org')"
+RUN R -e "install.packages('gimnet', repos = 'http://cran.us.r-project.org')"
+RUN R -e "install.packages('pROC', repos = 'http://cran.us.r-project.org')"
+RUN R -e "install.packages('data.table', repos = 'http://cran.us.r-project.org')"
+RUN R -e "install.packages('caret', repos = 'http://cran.us.r-project.org')"
+RUN R -e "install.packages('sqldf', repos = 'http://cran.us.r-project.org')"
+RUN R -e "install.packages('wordcloud', repos = 'http://cran.us.r-project.org')"
 
 
-#ADD zeppelin-0.7.0-SNAPSHOT /opt/zeppelin
-#ADD zeppelin-0.6.2-bin-all /opt/zeppelin
 ADD start.sh /opt/zeppelin
 ADD interpreter.json /opt/zeppelin/conf/interpreter.json
 RUN chmod oug+x //opt/zeppelin/start.sh
